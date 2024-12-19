@@ -2,7 +2,7 @@
 
 - This project involves analyzing historical Christmas tree sales data using Tableau and a Flask API. The data is stored in a Tableau Hyper file and is accessed programmatically for analysis and visualization.
 
-# First Commit: Data Loading Functionality
+## First Commit: Data Loading Functionality
 
 - Setting up the data.py script to connect to the Tableau Hyper API.
 
@@ -12,7 +12,7 @@
 
 - Ensuring proper error handling in case the Hyper file is inaccessible or contains no tables.
 
-# Key Features:
+## Key Features:
 
 - Loads data from the first table in the "Extract" schema of the Hyper file.
 
