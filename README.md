@@ -29,7 +29,13 @@
 ## Fourth Commit: Linear Regression Model to Predict the Average Tree Price over the Next Decade
 
 - Added a linear regression model to predict average tree prices for the years 2017-2024 based on historical data.
- 
+
 - Integrated the predictions into a new bar chart visualization and updated the Flask data.py to serve the predicted data.
 
 - Modified index.html to display the predicted bar chart alongside the existing charts for a comprehensive view. This enhancement provides insights into future trends in average tree prices.
+
+## Fifth Commit: Providing A Downloadable PDF of All Charts
+
+- Added a /download_report route to generate a downloadable PDF report summarizing the dataset and predicted tree prices for 2017-2024.
+
+- The report includes total real and fake trees sold, along with predictions for average tree prices in a formatted, user-friendly layout.

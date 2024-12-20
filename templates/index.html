@@ -9,45 +9,50 @@
 <body>
     <h1>Christmas Tree Sales Visualization</h1>
 
+    <!-- Pie Chart -->
     <h2>Tree Type Distribution: Real vs Fake Trees</h2>
-    <!-- Render the pie chart for tree type distribution -->
     <div id="pie_chart"></div>
     <script>
         var pieChartData = {{ pie_chart_data | safe }};
-        Plotly.newPlot('pie_chart', pieChartData);
+        Plotly.newPlot('pie_chart', [pieChartData]);
     </script>
 
-    <h2>Number of Trees Sold by Year</h2>
-    <!-- Render the bar chart for number of trees sold -->
-    <div id="trees_sold_chart"></div>
+    <!-- Bar Chart: Trees Sold per Year -->
+    <h2>Number of Trees Sold per Year</h2>
+    <div id="bar_chart_trees_sold"></div>
     <script>
-        var treesSoldChartData = {{ trees_sold_chart_data | safe }};
-        Plotly.newPlot('trees_sold_chart', treesSoldChartData);
+        var barChartTreesSold = {{ bar_chart_trees_sold | safe }};
+        Plotly.newPlot('bar_chart_trees_sold', [barChartTreesSold]);
     </script>
 
-    <h2>Average Tree Price by Year</h2>
-    <!-- Render the bar chart for average tree price -->
-    <div id="avg_tree_price_chart"></div>
+    <!-- Bar Chart: Average Tree Price per Year -->
+    <h2>Average Tree Price per Year</h2>
+    <div id="bar_chart_avg_price"></div>
     <script>
-        var avgTreePriceChartData = {{ avg_tree_price_chart_data | safe }};
-        Plotly.newPlot('avg_tree_price_chart', avgTreePriceChartData);
+        var barChartAvgPrice = {{ bar_chart_avg_price | safe }};
+        Plotly.newPlot('bar_chart_avg_price', [barChartAvgPrice]);
     </script>
 
-    <h2>Sales by Year</h2>
-    <!-- Render the bar chart for sales -->
-    <div id="sales_chart"></div>
+    <!-- Bar Chart: Sales per Year -->
+    <h2>Sales per Year</h2>
+    <div id="bar_chart_sales"></div>
     <script>
-        var salesChartData = {{ sales_chart_data | safe }};
-        Plotly.newPlot('sales_chart', salesChartData);
+        var barChartSales = {{ bar_chart_sales | safe }};
+        Plotly.newPlot('bar_chart_sales', [barChartSales]);
     </script>
 
-    <h2>Predicted Average Tree Price for 2017-2024</h2>
-    <!-- Render the predicted bar chart for future years -->
-    <div id="predicted_chart"></div>
+    <!-- Predicted Bar Chart -->
+    <h2>Predicted Average Tree Prices (2017-2024)</h2>
+    <div id="predicted_bar_chart"></div>
     <script>
-        var predictedChartData = {{ predicted_chart_data | safe }};
-        Plotly.newPlot('predicted_chart', predictedChartData);
+        var predictedBarChart = {{ predicted_bar_chart | safe }};
+        Plotly.newPlot('predicted_bar_chart', [predictedBarChart]);
     </script>
 
+    <!-- Download Report -->
+    <h2>Download Report</h2>
+    <form action="/download_report" method="get">
+        <button type="submit">Download PDF Report</button>
+    </form>
 </body>
 </html>
