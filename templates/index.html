@@ -4,69 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christmas Tree Sales</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> <!-- Plotly library -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
     <h1>Christmas Tree Sales Visualization</h1>
 
     <h2>Tree Type Distribution: Real vs Fake Trees</h2>
-    <!-- Render the pie chart using Plotly -->
+    <!-- Render the pie chart for tree type distribution -->
     <div id="pie_chart"></div>
     <script>
-        // Render the pie chart passed from Flask
         var pieChartData = {{ pie_chart_data | safe }};
         Plotly.newPlot('pie_chart', pieChartData);
     </script>
 
-    <h2>Number of Trees Sold by Year and Type</h2>
+    <h2>Number of Trees Sold by Year</h2>
     <!-- Render the bar chart for number of trees sold -->
-    <div id="bar_chart"></div>
+    <div id="trees_sold_chart"></div>
     <script>
-        // Render the bar chart passed from Flask
-        var barChartData = {{ bar_chart_data | safe }};
-        Plotly.newPlot('bar_chart', barChartData);
+        var treesSoldChartData = {{ trees_sold_chart_data | safe }};
+        Plotly.newPlot('trees_sold_chart', treesSoldChartData);
     </script>
 
     <h2>Average Tree Price by Year</h2>
     <!-- Render the bar chart for average tree price -->
-    <div id="avg_price_chart"></div>
+    <div id="avg_tree_price_chart"></div>
     <script>
-        // Render the average price chart passed from Flask
-        var avgPriceChartData = {{ avg_price_chart_data | safe }};
-        Plotly.newPlot('avg_price_chart', avgPriceChartData);
+        var avgTreePriceChartData = {{ avg_tree_price_chart_data | safe }};
+        Plotly.newPlot('avg_tree_price_chart', avgTreePriceChartData);
     </script>
 
-    <h2>Total Sales by Year</h2>
-    <!-- Render the bar chart for total sales -->
+    <h2>Sales by Year</h2>
+    <!-- Render the bar chart for sales -->
     <div id="sales_chart"></div>
     <script>
-        // Render the sales chart passed from Flask
         var salesChartData = {{ sales_chart_data | safe }};
         Plotly.newPlot('sales_chart', salesChartData);
     </script>
 
-    <h2>Data Table</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Year</th>
-                <th>Type of tree</th>
-                <th>Number of trees sold</th>
-                <th>Average Tree Price</th>
-                <th>Sales</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for row in data %}
-            <tr>
-                <td>{{ row['Year'] }}</td>
-                <td>{{ row['Type of tree'] }}</td>
-                <td>{{ row['Number of trees sold'] }}</td>
-                <td>{{ row['Average Tree Price'] }}</td>
-                <td>{{ row['Sales'] }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <h2>Predicted Average Tree Price for 2017-2024</h2>
+    <!-- Render the predicted bar chart for future years -->
+    <div id="predicted_chart"></div>
+    <script>
+        var predictedChartData = {{ predicted_chart_data | safe }};
+        Plotly.newPlot('predicted_chart', predictedChartData);
+    </script>
+
 </body>
 </html>

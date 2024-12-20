@@ -26,4 +26,10 @@
 
 - Generated three additional bar charts. "Number of Trees Sold by Year & Type", "Average Tree Price by Year", "Total Sales by Year"
 
-## Fourth Commit: 
+## Fourth Commit: Linear Regression Model to Predict the Average Tree Price over the Next Decade
+
+- Added a linear regression model to predict average tree prices for the years 2017-2024 based on historical data.
+ 
+- Integrated the predictions into a new bar chart visualization and updated the Flask data.py to serve the predicted data.
+
+- Modified index.html to display the predicted bar chart alongside the existing charts for a comprehensive view. This enhancement provides insights into future trends in average tree prices.
