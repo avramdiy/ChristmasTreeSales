@@ -21,3 +21,9 @@
 ## Second Commit: Exploring the Dataset & Displaying A Visualization
 
 - Swapped hyper file to CSV, found dataset was too small for proper bar chart or scatter plot, initiated index.html and data.py route to show comparison of real or fake trees sold in a pie chart.
+
+## Third Commit: Generating Additional Visualizations
+
+- Generated three additional bar charts. "Number of Trees Sold by Year & Type", "Average Tree Price by Year", "Total Sales by Year"
+
+## Fourth Commit: 

@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christmas Tree Sales</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery for AJAX -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> <!-- Plotly library -->
 </head>
 <body>
     <h1>Christmas Tree Sales Visualization</h1>
@@ -17,6 +16,33 @@
         // Render the pie chart passed from Flask
         var pieChartData = {{ pie_chart_data | safe }};
         Plotly.newPlot('pie_chart', pieChartData);
+    </script>
+
+    <h2>Number of Trees Sold by Year and Type</h2>
+    <!-- Render the bar chart for number of trees sold -->
+    <div id="bar_chart"></div>
+    <script>
+        // Render the bar chart passed from Flask
+        var barChartData = {{ bar_chart_data | safe }};
+        Plotly.newPlot('bar_chart', barChartData);
+    </script>
+
+    <h2>Average Tree Price by Year</h2>
+    <!-- Render the bar chart for average tree price -->
+    <div id="avg_price_chart"></div>
+    <script>
+        // Render the average price chart passed from Flask
+        var avgPriceChartData = {{ avg_price_chart_data | safe }};
+        Plotly.newPlot('avg_price_chart', avgPriceChartData);
+    </script>
+
+    <h2>Total Sales by Year</h2>
+    <!-- Render the bar chart for total sales -->
+    <div id="sales_chart"></div>
+    <script>
+        // Render the sales chart passed from Flask
+        var salesChartData = {{ sales_chart_data | safe }};
+        Plotly.newPlot('sales_chart', salesChartData);
     </script>
 
     <h2>Data Table</h2>
@@ -42,6 +68,5 @@
             {% endfor %}
         </tbody>
     </table>
-
 </body>
 </html>
