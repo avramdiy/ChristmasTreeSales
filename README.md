@@ -18,3 +18,6 @@
 
 - Converts the table data into a Pandas DataFrame for further analysis.
 
+## Second Commit: Exploring the Dataset & Displaying A Visualization
+
+- Swapped hyper file to CSV, found dataset was too small for proper bar chart or scatter plot, initiated index.html and data.py route to show comparison of real or fake trees sold in a pie chart.

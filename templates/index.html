@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Tree Sales</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery for AJAX -->
+</head>
+<body>
+    <h1>Christmas Tree Sales Visualization</h1>
+
+    <h2>Tree Type Distribution: Real vs Fake Trees</h2>
+    <!-- Render the pie chart using Plotly -->
+    <div id="pie_chart"></div>
+    <script>
+        // Render the pie chart passed from Flask
+        var pieChartData = {{ pie_chart_data | safe }};
+        Plotly.newPlot('pie_chart', pieChartData);
+    </script>
+
+    <h2>Data Table</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Type of tree</th>
+                <th>Number of trees sold</th>
+                <th>Average Tree Price</th>
+                <th>Sales</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row['Year'] }}</td>
+                <td>{{ row['Type of tree'] }}</td>
+                <td>{{ row['Number of trees sold'] }}</td>
+                <td>{{ row['Average Tree Price'] }}</td>
+                <td>{{ row['Sales'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
